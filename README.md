@@ -8,7 +8,6 @@ You only look once, but you reimplement neural nets over and over again.
 
 Original paper: [YOLO9000: Better, Faster, Stronger](https://arxiv.org/abs/1612.08242) by Joseph Redmond and Ali Farhadi.
 
-![YOLO_v2 COCO model with test_yolo defaults](etc/dog_small.jpg)
 
 --------------------------------------------------------------------------------
 
