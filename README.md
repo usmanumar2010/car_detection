@@ -1,12 +1,10 @@
-# YAD2K: Yet Another Darknet 2 Keras
+# Welcome to the care Detection with YOLO
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
-## Welcome to YAD2K
 
 You only look once, but you reimplement neural nets over and over again.
 
-YAD2K is a 90% Keras/10% Tensorflow implementation of YOLO_v2.
 
 Original paper: [YOLO9000: Better, Faster, Stronger](https://arxiv.org/abs/1612.08242) by Joseph Redmond and Ali Farhadi.
 
@@ -51,34 +49,10 @@ wget https://raw.githubusercontent.com/pjreddie/darknet/master/cfg/yolo.cfg
 ./test_yolo.py model_data/yolo.h5  # output in images/out/
 ```
 
-See `./yad2k.py --help` and `./test_yolo.py --help` for more options.
 
---------------------------------------------------------------------------------
 
-## More Details
 
-The YAD2K converter currently only supports YOLO_v2 style models, this include the following configurations: `darknet19_448`, `tiny-yolo-voc`, `yolo-voc`, and `yolo`.
 
-`yad2k.py -p` will produce a plot of the generated Keras model. For example see [yolo.png](etc/yolo.png).
-
-YAD2K assumes the Keras backend is Tensorflow. In particular for YOLO_v2 models with a passthrough layer, YAD2K uses `tf.space_to_depth` to implement the passthrough layer. The evaluation script also directly uses Tensorflow tensors and uses `tf.non_max_suppression` for the final output.
-
-`voc_conversion_scripts` contains two scripts for converting the Pascal VOC image dataset with XML annotations to either HDF5 or TFRecords format for easier training with Keras or Tensorflow.
-
-`yad2k/models` contains reference implementations of Darknet-19 and YOLO_v2.
-
-`train_overfit` is a sample training script that overfits a YOLO_v2 model to a single image from the Pascal VOC dataset.
-
-## Known Issues and TODOs
-
-- Expand sample training script to train YOLO_v2 reference model on full dataset.
-- Support for additional Darknet layer types.
-- Tuck away the Tensorflow dependencies with Keras wrappers where possible.
-- YOLO_v2 model does not support fully convolutional mode. Current implementation assumes 1:1 aspect ratio images.
-
-## Darknets of Yore
-
-YAD2K stands on the shoulders of giants.
 
 - :fire: [Darknet](https://github.com/pjreddie/darknet) :fire:
 - [Darknet.Keras](https://github.com/sunshineatnoon/Darknet.keras) - The original D2K for YOLO_v1.
